@@ -1,36 +1,43 @@
 import { Button } from "@chakra-ui/button";
 import Icon from "@chakra-ui/icon";
 import { Image } from "@chakra-ui/image";
-import { Flex, HStack, Link, Text } from "@chakra-ui/layout";
+import { Box, Flex, HStack, Link, Text, VStack } from "@chakra-ui/layout";
 import { Menu, MenuItem, MenuList, MenuButton } from "@chakra-ui/menu";
-import { HiBell, HiChevronDown, HiSearch, HiUserAdd } from "react-icons/hi";
+import { HiChevronDown } from "react-icons/hi";
 
 export default function Home() {
   return (
-    <>
-      <Flex w="100%" h="20" bg="gray.700" mx="auto">
+    <Flex direction="column" h="100vh">
+      <Flex as="header" w="100%" h="20" bg="gray.700" mx="auto">
         <Flex
+          w="100%"
           maxW="1366px"
           justifyContent="space-between"
-          m="auto"
+          mx="auto"
           alignItems="center"
           flex="1"
         >
           <Image src="/images/logo.svg" />
 
-          <HStack spacing="6" color="rgb(115, 115, 128)">
+          <HStack spacing="6" color="gray.600">
             <Link _hover={{ color: "gray.50" }}>Home</Link>
             <Link _hover={{ color: "gray.50" }}>Perfil</Link>
             <Link _hover={{ color: "gray.50" }}>Discover</Link>
-            <Menu placement="bottom">
+            <Menu placement="bottom" autoSelect={false}>
               <MenuButton as="button" _hover={{ color: "gray.50" }}>
                 Ignite
                 <Icon as={HiChevronDown} />
               </MenuButton>
-              <MenuList>
-                <MenuItem>Higher</MenuItem>
-                <MenuItem>React JS</MenuItem>
-                <MenuItem>Node JS</MenuItem>
+              <MenuList bg="gray.700" border="1px">
+                <MenuItem _hover={{ color: "gray.50", bg: "gray.600" }}>
+                  Higher
+                </MenuItem>
+                <MenuItem _hover={{ color: "gray.50", bg: "gray.600" }}>
+                  React JS
+                </MenuItem>
+                <MenuItem _hover={{ color: "gray.50", bg: "gray.600" }}>
+                  Node JS
+                </MenuItem>
               </MenuList>
             </Menu>
             <Link _hover={{ color: "gray.50" }}>Experts Club</Link>
@@ -65,11 +72,23 @@ export default function Home() {
         </Flex>
       </Flex>
 
-      <Flex h="100vh" w="100%">
-        <Flex maxW="1366px" m="auto">
-          <Text as="h1">Olá, Gabriel</Text>
+      <VStack w="100%" maxW="1120px" mx="auto" paddingTop="72px" spacing="8">
+        <Flex as="header" w="100%" alignItems="center">
+          <Text as="h1" fontSize="4xl" fontWeight="bold" color="white">
+            Olá, Gabriel
+          </Text>
+          <Text ml="4.8rem" lineHeight="2.6rem" color="gray.50">
+            Seja bem vindo de volta. <br /> Que tal continuar assistindo sua
+            aula de onde parou?
+          </Text>
+          <Text ml="auto" color="gray.600">
+            #NeverStopLearning
+          </Text>
         </Flex>
-      </Flex>
-    </>
+        <Box w="100%">
+          <Text>Teste</Text>
+        </Box>
+      </VStack>
+    </Flex>
   );
 }
