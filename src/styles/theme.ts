@@ -15,6 +15,9 @@ export const theme = extendTheme({
       "800": "#1F2029",
       "900": "rgb(18, 18, 20)",
     },
+    purple: {
+      "700": "rgb(45, 38, 74)",
+    },
   },
   fonts: {
     heading: "Roboto",
