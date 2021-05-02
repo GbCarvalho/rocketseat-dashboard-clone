@@ -8,8 +8,8 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/layout";
-import { Progress } from "@chakra-ui/progress";
 import { Header } from "../components/Header";
+import { ProgressBar } from "../components/ProgressBar";
 
 export default function Home() {
   return (
@@ -109,16 +109,9 @@ export default function Home() {
                 </Text>
               </Text>
 
-              <Progress
-                mt="4"
-                value={100}
-                colorScheme="whatsapp"
-                size="sm"
-                max={100}
-                w="485px"
-              >
+              <ProgressBar mt="4" progress={100} w="485px">
                 asda
-              </Progress>
+              </ProgressBar>
             </Flex>
           </Box>
 
